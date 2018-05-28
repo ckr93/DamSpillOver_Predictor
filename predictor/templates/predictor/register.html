@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/application/css/common.css">
+{#    <link rel="stylesheet" href="/static/application/css/register.css">#}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" id="navBar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>    
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="home.html">Home</a></li>
+        <li><a href="prediction.html">Predictor</a></li>
+        <li><a href="#">Dam Data</a></li>
+        <li><a href="#">Daily Data</a></li>
+        <li class="active"><a href="register.html">Register</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Index.html"> Logout  &nbsp; <span class="glyphicon glyphicon-user"></span> </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% if error_message %}
+    alert({{ error_message }})
+{% endif %}
+    
+<div class="loginBox">
+    <form role="form" action="{% url 'predictor:register' %}" method="post" enctype="multipart/form-data" >
+          {% csrf_token %}
+         <h2 class="headert">Register New User</h2>
+
+                 <br><br>
+                <div class="wrapper">
+                    <p id="pre">User Name</p>
+                        <input type="text" name="username" placeholder="username">
+                            <br><br>
+                    <p id="pre">Password</p>
+                        <input type="password" name="password" placeholder="password">
+                            <br><br>
+                    <button id="smallButton" type="submit">Register</button>
+                </div>
+    </form>
+
+
+		</div>
+
+    
+  
+
+<footer class="container-fluid text-center" id="footer">
+ <p>Sri lanka Dam Spill Over Predictor.</p>
+    <p>&copy;Chanaka Rathnakumara</p>
+</footer>
+
+</body>
+</html>

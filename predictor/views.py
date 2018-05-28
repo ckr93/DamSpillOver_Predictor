@@ -14,11 +14,55 @@ from pandas._libs.parsers import na_values
 from pandas.tests.io.parser import skiprows
 from sklearn import neighbors, preprocessing, cross_validation
 
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
+from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404, render_to_response
+from django.db.models import Q
+from django.views.decorators.csrf import csrf_protect, ensure_csrf_cookie
+from django.template import Context
+from django.template.loader import get_template
+from django.http import HttpResponseNotFound,HttpResponseServerError
+
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+
 # Create your views here
 
 def index(request):
 
     return render(request,'predictor/index.html')
+
+
+def register(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        login(request, user)
+        return render(request, 'predictor/home.html', {'error_message': 'Sucessfully Registered'})
+    else:
+        return render(request, 'predictor/register.html', {'error_message': 'Registration Unsuccessfull'})
+    return render(request,'predictor/register.html')
+
+
+def login_users(request):
+
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                c = {}
+                return render(request, 'predictor/home.html', c)
+            else:
+                return render(request, 'predictor/login.html', {'error_message': 'Your account has been disabled'})
+        else:
+            return render(request, 'predictor/login.html', {'error_message': 'Invalid login'})
+    return render(request, 'predictor/login.html')
 
 
 class Prediction:

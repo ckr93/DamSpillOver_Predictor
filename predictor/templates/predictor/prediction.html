@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction</title>
+</head>
+<body>
+<h1 class="text-center"> Results </h1>
+<div id="div1" class="fmt container-fluid text-center">
+
+    {% for allUsers  in allUsers %}
+        {% if allUsers == 3 %}
+            <p>You have risk Towards Heart Disease Please Channel a Heart Disease Expert as soon as
+                possible </p>
+
+        {% else %}
+            <p>You have no risk towards heart diseases. </p>
+
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+</body>
+</html>
