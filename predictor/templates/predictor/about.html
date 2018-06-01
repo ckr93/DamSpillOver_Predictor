@@ -24,40 +24,38 @@
       </button>
       <a class="navbar-brand" href="#"></a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+  <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ><a href="home.html">Home</a></li>
-        <li><a href="prediction.html">Predictor</a></li>
-        <li><a href="#">Dam Data</a></li>
-        <li><a href="#">Daily Data</a></li>
-        <li ><a href="register.html">Register</a></li>
-        <li class="active"><a href="about.html">About Us</a></li>
+        <li class="active"><a href="http://127.0.0.1:8000/predictor/home/">Home</a></li>
+        <li><a href="http://127.0.0.1:8000/predictor/form/">Predictor</a></li>
+        <li ><a href="http://127.0.0.1:8000/predictor/pastdata/">Dam Data</a></li>
+        <li><a href="http://127.0.0.1:8000/predictor/adddata/">Daily Data</a></li>
+        <li ><a href="http://127.0.0.1:8000/predictor/register/">Register</a></li>
+        <li><a href="http://127.0.0.1:8000/predictor/about/">About Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Index.html"> Logout  &nbsp; <span class="glyphicon glyphicon-user"></span> </a></li>
+        <li><a href="http://127.0.0.1:8000/predictor/login/"> Logout  &nbsp; <span class="glyphicon glyphicon-user"></span> </a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-{% if error_message %}
-    alert({{ error_message }})
-{% endif %}
 
 <div class="loginBox">
-  <h2 class="headert">About Us</h2>
-    <p>Aim of this project is to design, develop, implement, test and evaluate an effective, secured prototype web application to predict future dam spill over using the rainfall data of the catchment area of reservoir. This prototype web application will also predict the increment of the water level in the dam with the rainfall and this application will be helpful to maintain the water level of the reservoir as well.
+    <div class="headert">
+  <h2 class="align-middle">About Us</h2><br>
+    <p class="align-middle">Aim of this project is to design, develop, implement, test and evaluate an effective, secured prototype web application to predict future dam spill over using the rainfall data of the catchment area of reservoir. This prototype web application will also predict the increment of the water level in the dam with the rainfall and this application will be helpful to maintain the water level of the reservoir as well.
  </p>
+        </div>
 
 		</div>
 
 
 
 
-<footer class="container-fluid text-center" id="footer">
- <p>Sri lanka Dam Spill Over Predictor.</p>
-    <p>&copy;Chanaka Rathnakumara</p>
-</footer>
+    <footer class="container-fluid text-center" id="footer">
+        <p>HNR &copy;Chanaka Rathnakumara</p>
+    </footer>
 
 </body>
 </html>

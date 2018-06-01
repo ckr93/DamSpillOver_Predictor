@@ -1,24 +1,125 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Prediction</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/application/css/common.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1 class="text-center"> Results </h1>
+
+<nav class="navbar navbar-inverse" id="navBar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="http://127.0.0.1:8000/predictor/home/">Home</a></li>
+        <li class="active"><a href="http://127.0.0.1:8000/predictor/form/">Predictor</a></li>
+        <li ><a href="http://127.0.0.1:8000/predictor/pastdata/">Dam Data</a></li>
+        <li><a href="http://127.0.0.1:8000/predictor/adddata/">Daily Data</a></li>
+        <li ><a href="http://127.0.0.1:8000/predictor/register/">Register</a></li>
+        <li><a href="http://127.0.0.1:8000/predictor/about/">About Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://127.0.0.1:8000/predictor/login/"> Logout  &nbsp; <span class="glyphicon glyphicon-user"></span> </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="loginBoxP">
+<h1 class="text-center"> Results </h1><br>
+
+			<img src="/static/application/img/logo.png" class="logo">
+      <br>
+<div class="wrapperP">
+
 <div id="div1" class="fmt container-fluid text-center">
 
     {% for allUsers  in allUsers %}
-        {% if allUsers == 3 %}
-            <p>You have risk Towards Heart Disease Please Channel a Heart Disease Expert as soon as
-                possible </p>
+        {% if allUsers == 5 %}
 
-        {% else %}
-            <p>You have no risk towards heart diseases. </p>
+            <h3 id="red">Spill Alert</h3><br>
+            <h4>Water Elevation will reach over 437.0 meteres. Water level will reach over 95% of the tank  </h4> <br>
+            <h3 id="red">Get Necessary Actions </h3><br>
+
+        {% else%}
+
+
+        {% endif %}
+
+
+        {%if allUsers == 4 %}
+            <h4>Water Elevation will reach between 436.0 meters - 437.0 meteres. </h4><br>
+
+        {% else%}
+
+
+        {% endif %}
+
+
+            {% if allUsers == 3 %}
+            <h4>Water Elevation will reach between 420.0 meters - 430.0 meteres. </h4><br>
+
+        {% else%}
+
+
+        {% endif %}
+
+            {% if allUsers == 2 %}
+            <h4>Water Elevation will reach between 410.0 meters - 420.0 meteres. </h4><br>
+
+        {% else%}
+
+
+        {% endif %}
+
+            {% if allUsers == 1 %}
+            <h4>Water Elevation will reach between 400.0 meters - 410.0 meteres. </h4><br>
+
+        {% else%}
+
+
+        {% endif %}
+
+            {% if allUsers == 0 %}
+            <h4>Water Elevation will reach lower than 400.0 meteres. </h4><br>
+
+            {% else%}
+
 
         {% endif %}
 
     {% endfor %}
 
+    {% for accuracy  in accuracy %}
+
+        <p>According to the system prediction is {{accuracy}}% accurate</p><br>
+
+    {% endfor %}
+
+<button id="smallButton" type="button"><a href="http://127.0.0.1:8000/predictor/home/">OK</a></button><br><br>
 </div>
+
+</div>
+</div>
+
+<footer class="container-fluid text-center" id="footer">
+ <p>Sri lanka Dam Spill Over Predictor.</p>
+    <p>&copy;Chanaka Rathnakumara</p>
+</footer>
+
 </body>
 </html>

@@ -26,9 +26,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li ><a href="http://127.0.0.1:8000/predictor/home/">Home</a></li>
-        <li class="active"><a href="http://127.0.0.1:8000/predictor/form/">Predictor</a></li>
+        <li ><a href="http://127.0.0.1:8000/predictor/form/">Predictor</a></li>
         <li ><a href="http://127.0.0.1:8000/predictor/pastdata/">Dam Data</a></li>
-        <li><a href="http://127.0.0.1:8000/predictor/adddata/">Daily Data</a></li>
+        <li class="active"><a href="http://127.0.0.1:8000/predictor/adddata/">Daily Data</a></li>
         <li ><a href="http://127.0.0.1:8000/predictor/register/">Register</a></li>
         <li><a href="http://127.0.0.1:8000/predictor/about/">About Us</a></li>
       </ul>
@@ -40,29 +40,16 @@
 </nav>
 
 
-<div class="loginBoxNew">
-
-    <h3 class="headert"> Dam Spill Over Predictor </h3><br>
-    <form  action="{% url 'predictor:spillpredictor' %}" method="post">
-        <div class="wrappernew">
+<div class="loginBoxNewf">
+    <h3 class="headert"> Dam Data Collector </h3><br>
+    <form  action="" method="post">
+        <div class="wrapperf">
         {% csrf_token %}
 
-            <label>Rainfall (mm)</label><br>
-            <input type="text" name="rainfall" placeholder="22"><br><br>
-
-            <label>Inflow (MCM)</label><br>
-            <input type="text" name="inflow" placeholder="22"><br><br>
-
-            <label>Outlet (MCM)</label><br>
-            <input type="text" name="outlet" placeholder="22"><br><br>
-
-            <label>Storage (MCM)</label><br>
-            <input type="text" name="storage"  placeholder="22"><br><br>
-
-        <label>Year</label><br>
+        <label>Year</label>
         <input type="text" name="year" placeholder="2018"><br><br>
 
-          <label>Month</label><br>
+          <label>Month</label>
         <select class="text-center" id="month" name="month">
             <option value="1">January</option>
             <option value="2">February</option>
@@ -78,16 +65,38 @@
             <option value="12">December</option>
         </select><br><br>
 
-        <label>Date</label><br>
-        <input type="text" name="date" placeholder="22"><br><br>
+        <label>Date</label>
+            <input type="text" name="date" placeholder="0"><br><br>
+
+            <label>Reservoir Elevation (m)</label>
+            <input type="text" name="elevation" placeholder="0"><br><br>
+
+            <label>Gross Storage (MCM)</label>
+            <input type="text" name="storage" placeholder="0"><br><br>
+
+            <label>Presentage</label>
+            <input type="text" name="presentage" placeholder="0"><br><br>
+
+            <label>Power Released</label>
+            <input type="text" name="power"  placeholder="0"><br><br>
+
+            <label>Energy (GWH)</label>
+            <input type="text" name="rainfall" placeholder="0"><br><br>
+
+            <label>Inflow (MCM)</label>
+            <input type="text" name="inflow" placeholder="0"><br><br>
+
+            <label>Outlet (MCM)</label>
+            <input type="text" name="outlet" placeholder="0"><br><br>
+
+            <label>Rainfall (MCM)</label>
+            <input type="text" name="rainfall"  placeholder="0"><br><br>
 
 
 
+    <input role="button" type="submit" value="Add Data" id="submitB"><br><
 
 
-
-
-    <input role="button" type="submit" value="Predict" id="submitB"><br><br>
         </div>
     </form>
 

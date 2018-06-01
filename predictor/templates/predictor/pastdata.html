@@ -23,11 +23,11 @@
       </button>
       <a class="navbar-brand" href="#"></a>
     </div>
-  <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="http://127.0.0.1:8000/predictor/home/">Home</a></li>
+        <li ><a href="http://127.0.0.1:8000/predictor/home/">Home</a></li>
         <li><a href="http://127.0.0.1:8000/predictor/form/">Predictor</a></li>
-        <li ><a href="http://127.0.0.1:8000/predictor/pastdata/">Dam Data</a></li>
+        <li class="active"><a href="http://127.0.0.1:8000/predictor/pastdata/">Dam Data</a></li>
         <li><a href="http://127.0.0.1:8000/predictor/adddata/">Daily Data</a></li>
         <li ><a href="http://127.0.0.1:8000/predictor/register/">Register</a></li>
         <li><a href="http://127.0.0.1:8000/predictor/about/">About Us</a></li>
@@ -46,19 +46,42 @@
       <br><br>
 <div class="wrapper">
 				
-    <button type="button" class="hButton"><a href="http://127.0.0.1:8000/predictor/form/">Predictor</a></button>
-                <br><br>
-    <button type="button" class="hButton"><a href="http://127.0.0.1:8000/predictor/pastdata/">View Past Dam Data</a></button>
-                <br><br>
-    <button type="button" class="hButton"><a href="http://127.0.0.1:8000/predictor/adddata/">Add Daily Data</a></button>
-                <br><br>
+				<p id="pre">Enter the Year</p>
+				<input list="number" name="" placeholder="2018">
+                <datalist id="number">
+              <option value="2017">
+              <option value="2016">
+              <option value="2015">
+              <option value="2014">
+                    <option value="2013">
+              <option value="2012">
+              <option value="2011">
+              <option value="2010">
+              <option value="2009">
+                    <option value="2008">
+              <option value="2007">
+              <option value="2006">
+              <option value="2005">
+              <option value="2004">
+                    <option value="2003">
+              <option value="2002">
+              <option value="2001">
+              <option value="2000">
+              <option value="1999">
+                    <option value="1998">
+              <option value="1997">
+              <option value="1996">
+              <option value="1995">
+</datalist>
+    <br><br>
+				<button id="smallButton" type="button" onclick="alert('Hello world!')">View Data</button>
 
                 </div>
 
 		</div>
 
 <footer class="container-fluid text-center" id="footer">
- <p>Sri lanka Dam Spill Over Predictor.</p>
+  <p>Sri lanka Dam Spill Over Predictor.</p>
     <p>&copy;Chanaka Rathnakumara</p>
 </footer>
 
